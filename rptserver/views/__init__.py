@@ -128,6 +128,9 @@ def configure_before_handlers(app):
 
         if request.path == "/api/login":
             g.message = '登录@尝试登录'
+        if request.path == '/api/info/add':
+            g.message = '注册'
+    
         else:
             try:
                 # if request.path == "/User/RefreshToken":
