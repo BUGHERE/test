@@ -255,3 +255,4 @@ app = create_app(__name__, __path__)
 
 api = flask_restplus.Api(app, "YINSHO", title="XX系统", description="系统后端")
 configure_namespace(api, "rptserver.views", [os.path.dirname(__file__)])
+CORS(app)
