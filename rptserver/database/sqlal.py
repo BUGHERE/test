@@ -30,7 +30,7 @@ func_to_date = func.str_to_date
 #####################
 Base = declarative_base()
 
-SQLALCHEMY_DATABASE_URL = u"mysql+pymysql://root:aaa111@localhost:3306/病人信息"
+SQLALCHEMY_DATABASE_URL = u"mysql+pymysql://root:aaa111@localhost:3306/hospital"
 
 def to_dict(self, convert=True):
     """Extend Ablity To Dict Orm Object Data"""

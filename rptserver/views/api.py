@@ -77,7 +77,7 @@ class UserUpdate(Resource):
 
 @_NS.route('/info/get')
 class PatientInfo(Resource):
-    """病人信息"""
+    """patient"""
     
     get_parser = reqparse.RequestParser()
     get_parser.add_argument('pageNum', help="分页参数-数据页数, 默认第一页", type=int, required=False, default=None)
@@ -94,7 +94,8 @@ class PatientInfo(Resource):
                     'age': fields.Integer(required=False, description='发病时年龄'),
                     'fbDate': fields.DateTime(required=False, description='发现日期'),
                     'ryDate': fields.DateTime(required=False, description='入院日期'),
-                    'site': fields.String(required=False, description='右乳or左乳or双乳')
+                    'death': fields.String(required=False, description='死亡与否'),
+                    'deathtime': fields.DateTime(required=False, description='死亡时间')
                 }, required=True, description='数据内容')
             ))
     })
@@ -117,7 +118,8 @@ class Detail(Resource):
         'age': fields.Integer(required=False, description='发病时年龄'),
         'fbDate': fields.DateTime(required=False, description='发现日期'),
         'ryDate': fields.DateTime(required=False, description='入院日期'),
-        'site': fields.String(required=False, description='右乳or左乳or双乳')
+        'death': fields.String(required=False, description='死亡与否'),
+        'deathtime': fields.DateTime(required=False, description='死亡时间')
     })
 
     @_NS.expect(get_parser)
@@ -145,7 +147,8 @@ class Search(Resource):
                     'age': fields.Integer(required=False, description='发病时年龄'),
                     'fbDate': fields.DateTime(required=False, description='发现日期'),
                     'ryDate': fields.DateTime(required=False, description='入院日期'),
-                    'site': fields.String(required=False, description='右乳or左乳or双乳')
+                    'death': fields.String(required=False, description='死亡与否'),
+                    'deathtime': fields.DateTime(required=False, description='死亡时间')
                 }, required=True, description='数据内容')
             ))
     })
