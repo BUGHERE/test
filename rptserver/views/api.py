@@ -94,6 +94,7 @@ class PatientInfo(Resource):
                     'age': fields.Integer(required=False, description='发病时年龄'),
                     'fbDate': fields.DateTime(required=False, description='发现日期'),
                     'ryDate': fields.DateTime(required=False, description='入院日期'),
+                    'cyDate': fields.DateTime(required=False, description='出院日期'),
                     'death': fields.String(required=False, description='死亡与否'),
                     'deathtime': fields.DateTime(required=False, description='死亡时间')
                 }, required=True, description='数据内容')
